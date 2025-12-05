@@ -1,0 +1,61 @@
+{
+  "name": "@mcp-security/mobsf",
+  "version": "1.0.0",
+  "description": "MCP server for MobSF - Mobile app security analysis",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "bin": {
+    "mcp-mobsf": "build/index.js"
+  },
+  "files": [
+    "build",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "start": "node build/index.js",
+    "clean": "rm -rf build",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "mobsf",
+    "security",
+    "penetration-testing",
+    "ai",
+    "claude",
+    "mobile-security",
+    "android",
+    "ios",
+    "apk-analysis"
+  ],
+  "author": "MCP Security Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hackersatyamrastogi/Cyber_MCPs.git",
+    "directory": "servers/mobsf"
+  },
+  "bugs": {
+    "url": "https://github.com/hackersatyamrastogi/Cyber_MCPs/issues"
+  },
+  "homepage": "https://github.com/hackersatyamrastogi/Cyber_MCPs/tree/main/servers/mobsf#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.8.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "name": "@mcp-security/gowitness",
+  "version": "1.0.0",
+  "description": "MCP server for GoWitness - Website screenshot utility",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "bin": {
+    "mcp-gowitness": "build/index.js"
+  },
+  "files": [
+    "build",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "start": "node build/index.js",
+    "clean": "rm -rf build",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "gowitness",
+    "security",
+    "penetration-testing",
+    "ai",
+    "claude",
+    "screenshot",
+    "visual-recon",
+    "web-capture"
+  ],
+  "author": "MCP Security Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hackersatyamrastogi/Cyber_MCPs.git",
+    "directory": "servers/gowitness"
+  },
+  "bugs": {
+    "url": "https://github.com/hackersatyamrastogi/Cyber_MCPs/issues"
+  },
+  "homepage": "https://github.com/hackersatyamrastogi/Cyber_MCPs/tree/main/servers/gowitness#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.8.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
