@@ -1,11 +1,11 @@
 {
-  "name": "@mcp-security/mobsf",
+  "name": "@mcp-security/nextjs-scanner",
   "version": "1.0.0",
-  "description": "MCP server for MobSF - Mobile app security analysis",
+  "description": "MCP server for Next.js CVE-2025-66478 & CVE-2025-55182 vulnerability scanning - React Server Components RCE detection",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "bin": {
-    "mcp-mobsf": "build/index.js"
+    "mcp-nextjs-scanner": "build/index.js"
   },
   "files": [
     "build",
@@ -22,31 +22,30 @@
   "keywords": [
     "mcp",
     "model-context-protocol",
-    "mobsf",
+    "nextjs",
+    "react",
     "security",
+    "vulnerability-scanner",
+    "cve-2025-66478",
+    "cve-2025-55182",
+    "rce",
     "penetration-testing",
     "ai",
-    "claude",
-    "mobile-security",
-    "android",
-    "ios",
-    "apk-analysis"
+    "claude"
   ],
   "author": "MCP Security Contributors",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/hackersatyamrastogi/Cyber_MCPs.git",
-    "directory": "servers/mobsf"
+    "directory": "servers/nextjs-scanner"
   },
   "bugs": {
     "url": "https://github.com/hackersatyamrastogi/Cyber_MCPs/issues"
   },
-  "homepage": "https://github.com/hackersatyamrastogi/Cyber_MCPs/tree/main/servers/mobsf#readme",
+  "homepage": "https://github.com/hackersatyamrastogi/Cyber_MCPs/tree/main/servers/nextjs-scanner#readme",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.8.0",
-    "axios": "^1.7.0",
-    "form-data": "^4.0.0",
     "zod": "^3.24.0"
   },
   "devDependencies": {

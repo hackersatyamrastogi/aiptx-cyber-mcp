@@ -2,7 +2,6 @@
  * Scan-related tools for the Nessus MCP server
  */
 
-import { z } from 'zod';
 import {
   getScanTemplates,
   startScan,
@@ -78,10 +77,6 @@ export const startScanToolSchema = {
 
 export const startScanToolHandler = async (args: Record<string, unknown>) => {
   try {
-    // Validate arguments
-    const targetSchema = z.string().min(1);
-    const scanTypeSchema = z.enum(['basic-network-scan', 'web-app-scan', 'compliance-scan']);
-
     const target = validateTarget(args.target);
     const scanType = validateScanType(args.scan_type);
 

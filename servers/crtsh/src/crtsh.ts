@@ -26,7 +26,7 @@ async function sendReqCrtSh(query: string): Promise<string[]> {
             return [];
         }
 
-        const crtshResponse: CrtShResponse[] = await response.json();
+        const crtshResponse = await response.json() as CrtShResponse[];
         const domains: string[] = [];
 
         for (const crtshResp of crtshResponse) {

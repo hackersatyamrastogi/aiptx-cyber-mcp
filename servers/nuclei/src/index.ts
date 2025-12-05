@@ -81,8 +81,8 @@ server.tool(
     async () => {
         return new Promise((resolve, reject) => {
             fetch('https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/refs/heads/main/TEMPLATES-STATS.json')
-                .then(response => response.json())
-                .then((data: { tags: { name: string }[] }) => {
+                .then(response => response.json() as Promise<{ tags: { name: string }[] }>)
+                .then((data) => {
                     const tagNames = data.tags.map(tag => tag.name);
                     resolve({
                         content: [{

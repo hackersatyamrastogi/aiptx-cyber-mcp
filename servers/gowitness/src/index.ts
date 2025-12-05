@@ -197,9 +197,7 @@ server.tool(
         
         if (screenshot_path) args.push("--screenshot-path", screenshot_path);
         if (db_uri) args.push("--write-db-uri", db_uri);
-        
-        // Note: gowitness report command may have different syntax
-        // This is a basic implementation - you may need to adjust based on actual gowitness report options
+        if (output_format) args.push("--format", output_format);
 
         const proc = spawn(gowitnessPath, args);
         let output = "";
