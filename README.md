@@ -50,13 +50,25 @@
 
 ## Overview
 
-This monorepo contains **38 MCP servers** that wrap popular security tools, making them accessible to AI assistants like Claude through the [Model Context Protocol](https://modelcontextprotocol.io/).
+This monorepo contains **40+ MCP servers** that wrap popular security tools, making them accessible to AI assistants through the [Model Context Protocol](https://modelcontextprotocol.io/).
 
 Each server is:
 - **Standalone** - Can be installed and used independently
 - **Type-safe** - Written in TypeScript with full type definitions
-- **Well-documented** - Includes usage examples and Claude Desktop configuration
+- **Well-documented** - Includes usage examples and configuration guides
 - **Production-ready** - Published on npm with semantic versioning
+
+### 🚀 Unified Server (NEW)
+
+Connect **all 40+ tools with a single command**:
+
+```bash
+# Run the unified server
+node servers/unified/build/index.js
+
+# Or generate config for all servers
+./scripts/generate-config.sh --install
+```
 
 ## Available Servers
 
@@ -139,7 +151,7 @@ Each server is:
 
 - Node.js 18+
 - The underlying security tool installed on your system
-- Claude Desktop or any MCP-compatible client
+- Any MCP-compatible AI client (Desktop app, Cursor IDE, etc.)
 
 ### Quick Start
 
@@ -151,9 +163,9 @@ npm install -g @mcp-security/nmap
 npx @mcp-security/nmap /usr/bin/nmap
 ```
 
-### Claude Desktop Configuration
+### MCP Client Configuration
 
-Add to your `claude_desktop_config.json`:
+Add to your MCP client configuration (e.g., `mcp_config.json`):
 
 ```json
 {
@@ -193,7 +205,7 @@ Once configured, you can interact with security tools through natural language:
 ```
 User: Scan 192.168.1.1 for open ports
 
-Claude: I'll run an Nmap scan on that target.
+AI: I'll run an Nmap scan on that target.
 [Uses nmap MCP server]
 
 Results:
@@ -205,7 +217,7 @@ Results:
 ```
 User: Search Shodan for exposed MongoDB databases
 
-Claude: I'll search Shodan for MongoDB instances.
+AI: I'll search Shodan for MongoDB instances.
 [Uses shodan MCP server]
 
 Found 15,432 results for MongoDB servers...
@@ -214,7 +226,7 @@ Found 15,432 results for MongoDB servers...
 ```
 User: Scan my Terraform files for security issues
 
-Claude: I'll run Checkov to analyze your IaC files.
+AI: I'll run Checkov to analyze your IaC files.
 [Uses checkov MCP server]
 
 Found 12 security issues:
@@ -281,7 +293,7 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 
 ## Acknowledgments
 
-- [Model Context Protocol](https://modelcontextprotocol.io/) by Anthropic
+- [Model Context Protocol](https://modelcontextprotocol.io/) - Open standard for AI tool integration
 - All the amazing open-source security tools this project wraps
 - The security research community
 
