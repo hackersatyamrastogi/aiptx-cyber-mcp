@@ -166,9 +166,10 @@ server.tool(
   },
   async ({ urls, workers }) => {
     const results: any[] = [];
+    // Note: workers param reserved for future parallel implementation
 
     for (const url of urls) {
-      const args = ["url", url, "--format", "json", "--silence"];
+      const args = ["url", url, "--format", "json", "--silence", "--worker", workers.toString()];
 
       try {
         const output = await runDalfox(args);

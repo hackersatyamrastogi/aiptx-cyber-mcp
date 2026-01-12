@@ -35,7 +35,7 @@ function runCme(args: string[]): Promise<string> {
       errorOutput += data.toString();
     });
 
-    proc.on("close", (code) => {
+    proc.on("close", (_code) => {
       // CME may return non-zero for various reasons
       resolve(output || errorOutput);
     });

@@ -158,7 +158,8 @@ server.tool(
     path: z.string().describe("Path to Kubernetes YAML files"),
     namespace: z.string().optional().describe("Kubernetes namespace to scan"),
   },
-  async ({ path, namespace }) => {
+  async ({ path, namespace: _namespace }) => {
+    // Note: namespace filtering can be added via --check flags if needed
     const args = ["-d", path, "--framework", "kubernetes", "-o", "json"];
 
     try {

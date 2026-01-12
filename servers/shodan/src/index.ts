@@ -215,13 +215,13 @@ server.tool(
         throw new Error(`API error: ${response.status}`);
       }
 
-      const result = await response.json();
+      const result = await response.json() as { id?: string; credits_left?: number };
 
       return {
         content: [
           {
             type: "text",
-            text: `Scan requested.\nScan ID: ${result.id}\nCredits remaining: ${result.credits_left}\n\nNote: Results will be available in Shodan once the scan completes.`,
+            text: `Scan requested.\nScan ID: ${result.id || "N/A"}\nCredits remaining: ${result.credits_left || "N/A"}\n\nNote: Results will be available in Shodan once the scan completes.`,
           },
         ],
       };

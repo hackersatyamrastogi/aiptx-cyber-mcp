@@ -69,13 +69,13 @@ server.tool(
         throw new Error(`API error: ${response.status}`);
       }
 
-      const result = await response.json();
+      const result = await response.json() as { data?: { id?: string } };
 
       return {
         content: [
           {
             type: "text",
-            text: `URL submitted for scanning.\nAnalysis ID: ${result.data?.id}\n\nUse vt-url-report to get results.`,
+            text: `URL submitted for scanning.\nAnalysis ID: ${result.data?.id || "N/A"}\n\nUse vt-url-report to get results.`,
           },
         ],
       };

@@ -39,12 +39,15 @@ async function runCypherQuery(query: string): Promise<any> {
     throw new Error(`Neo4j error: ${response.status}`);
   }
 
-  const result = await response.json();
-  if (result.errors?.length > 0) {
+  const result = await response.json() as {
+    errors?: { message: string }[];
+    results?: any[]
+  };
+  if (result.errors && result.errors.length > 0) {
     throw new Error(result.errors[0].message);
   }
 
-  return result.results[0];
+  return result.results?.[0];
 }
 
 server.tool(

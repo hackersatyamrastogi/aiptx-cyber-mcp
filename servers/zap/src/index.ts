@@ -295,7 +295,7 @@ server.tool(
   },
   async ({ mode }) => {
     try {
-      const result = await zapRequest("/core/action/setMode/", { mode });
+      await zapRequest("/core/action/setMode/", { mode });
 
       return {
         content: [
