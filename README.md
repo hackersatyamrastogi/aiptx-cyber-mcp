@@ -50,7 +50,7 @@
 
 ## Overview
 
-This monorepo contains **24 MCP servers** that wrap popular security tools, making them accessible to AI assistants like Claude through the [Model Context Protocol](https://modelcontextprotocol.io/).
+This monorepo contains **38 MCP servers** that wrap popular security tools, making them accessible to AI assistants like Claude through the [Model Context Protocol](https://modelcontextprotocol.io/).
 
 Each server is:
 - **Standalone** - Can be installed and used independently
@@ -60,44 +60,78 @@ Each server is:
 
 ## Available Servers
 
-### Reconnaissance Tools (11)
+### Reconnaissance Tools (12)
 
 | Package | Tool | Description |
 |---------|------|-------------|
-| [`@mcp-security/amass`](./amass) | [Amass](https://github.com/owasp-amass/amass) | Subdomain enumeration and attack surface mapping |
-| [`@mcp-security/alterx`](./alterx) | [Alterx](https://github.com/projectdiscovery/alterx) | Fast subdomain wordlist generator |
-| [`@mcp-security/assetfinder`](./assetfinder) | [Assetfinder](https://github.com/tomnomnom/assetfinder) | Asset discovery from various sources |
-| [`@mcp-security/cero`](./cero) | [Cero](https://github.com/glebarez/cero) | Certificate-based subdomain discovery |
-| [`@mcp-security/crtsh`](./crtsh) | [crt.sh](https://crt.sh) | Certificate transparency log search |
-| [`@mcp-security/shuffledns`](./shuffledns) | [ShuffleDNS](https://github.com/projectdiscovery/shuffledns) | High-speed DNS resolver and bruteforcer |
-| [`@mcp-security/httpx`](./httpx) | [httpx](https://github.com/projectdiscovery/httpx) | Fast HTTP probing and analysis |
-| [`@mcp-security/katana`](./katana) | [Katana](https://github.com/projectdiscovery/katana) | Next-gen web crawling framework |
-| [`@mcp-security/gowitness`](./gowitness) | [GoWitness](https://github.com/sensepost/gowitness) | Website screenshot utility |
-| [`@mcp-security/waybackurls`](./waybackurls) | [Waybackurls](https://github.com/tomnomnom/waybackurls) | Fetch URLs from Wayback Machine |
-| [`@mcp-security/masscan`](./masscan) | [Masscan](https://github.com/robertdavidgraham/masscan) | High-speed port scanner |
+| [`@mcp-security/amass`](./servers/amass) | [Amass](https://github.com/owasp-amass/amass) | Subdomain enumeration and attack surface mapping |
+| [`@mcp-security/alterx`](./servers/alterx) | [Alterx](https://github.com/projectdiscovery/alterx) | Fast subdomain wordlist generator |
+| [`@mcp-security/assetfinder`](./servers/assetfinder) | [Assetfinder](https://github.com/tomnomnom/assetfinder) | Asset discovery from various sources |
+| [`@mcp-security/cero`](./servers/cero) | [Cero](https://github.com/glebarez/cero) | Certificate-based subdomain discovery |
+| [`@mcp-security/crtsh`](./servers/crtsh) | [crt.sh](https://crt.sh) | Certificate transparency log search |
+| [`@mcp-security/shuffledns`](./servers/shuffledns) | [ShuffleDNS](https://github.com/projectdiscovery/shuffledns) | High-speed DNS resolver and bruteforcer |
+| [`@mcp-security/httpx`](./servers/httpx) | [httpx](https://github.com/projectdiscovery/httpx) | Fast HTTP probing and analysis |
+| [`@mcp-security/katana`](./servers/katana) | [Katana](https://github.com/projectdiscovery/katana) | Next-gen web crawling framework |
+| [`@mcp-security/gowitness`](./servers/gowitness) | [GoWitness](https://github.com/sensepost/gowitness) | Website screenshot utility |
+| [`@mcp-security/waybackurls`](./servers/waybackurls) | [Waybackurls](https://github.com/tomnomnom/waybackurls) | Fetch URLs from Wayback Machine |
+| [`@mcp-security/masscan`](./servers/masscan) | [Masscan](https://github.com/robertdavidgraham/masscan) | High-speed port scanner |
+| [`@mcp-security/subfinder`](./servers/subfinder) | [Subfinder](https://github.com/projectdiscovery/subfinder) | Fast passive subdomain enumeration |
 
-### Vulnerability Assessment (8)
-
-| Package | Tool | Description |
-|---------|------|-------------|
-| [`@mcp-security/nuclei`](./nuclei) | [Nuclei](https://github.com/projectdiscovery/nuclei) | Template-based vulnerability scanner |
-| [`@mcp-security/nmap`](./nmap) | [Nmap](https://nmap.org) | Network discovery and security auditing |
-| [`@mcp-security/sqlmap`](./sqlmap) | [SQLmap](https://sqlmap.org) | SQL injection detection and exploitation |
-| [`@mcp-security/ffuf`](./ffuf) | [FFUF](https://github.com/ffuf/ffuf) | Fast web fuzzer |
-| [`@mcp-security/arjun`](./arjun) | [Arjun](https://github.com/s0md3v/Arjun) | HTTP parameter discovery |
-| [`@mcp-security/smuggler`](./smuggler) | [Smuggler](https://github.com/defparam/smuggler) | HTTP request smuggling detector |
-| [`@mcp-security/wpscan`](./wpscan) | [WPScan](https://wpscan.com) | WordPress security scanner |
-| [`@mcp-security/nessus`](./nessus) | [Nessus](https://www.tenable.com/products/nessus) | Vulnerability scanner integration |
-
-### Specialized Tools (5)
+### Vulnerability Assessment (11)
 
 | Package | Tool | Description |
 |---------|------|-------------|
-| [`@mcp-security/scoutsuite`](./scoutsuite) | [ScoutSuite](https://github.com/nccgroup/ScoutSuite) | Cloud security auditing (AWS/Azure/GCP) |
-| [`@mcp-security/mobsf`](./mobsf) | [MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF) | Mobile app security analysis |
-| [`@mcp-security/sslscan`](./sslscan) | [SSLScan](https://github.com/rbsec/sslscan) | SSL/TLS configuration testing |
-| [`@mcp-security/http-headers`](./http-headers) | Custom | Security headers analysis |
-| [`@mcp-security/commix`](./commix) | [Commix](https://github.com/commixproject/commix) | Command injection exploitation |
+| [`@mcp-security/nuclei`](./servers/nuclei) | [Nuclei](https://github.com/projectdiscovery/nuclei) | Template-based vulnerability scanner |
+| [`@mcp-security/nmap`](./servers/nmap) | [Nmap](https://nmap.org) | Network discovery and security auditing |
+| [`@mcp-security/sqlmap`](./servers/sqlmap) | [SQLmap](https://sqlmap.org) | SQL injection detection and exploitation |
+| [`@mcp-security/ffuf`](./servers/ffuf) | [FFUF](https://github.com/ffuf/ffuf) | Fast web fuzzer |
+| [`@mcp-security/arjun`](./servers/arjun) | [Arjun](https://github.com/s0md3v/Arjun) | HTTP parameter discovery |
+| [`@mcp-security/smuggler`](./servers/smuggler) | [Smuggler](https://github.com/defparam/smuggler) | HTTP request smuggling detector |
+| [`@mcp-security/wpscan`](./servers/wpscan) | [WPScan](https://wpscan.com) | WordPress security scanner |
+| [`@mcp-security/nessus`](./servers/nessus) | [Nessus](https://www.tenable.com/products/nessus) | Vulnerability scanner integration |
+| [`@mcp-security/dalfox`](./servers/dalfox) | [Dalfox](https://github.com/hahwul/dalfox) | XSS vulnerability scanner |
+| [`@mcp-security/zap`](./servers/zap) | [OWASP ZAP](https://www.zaproxy.org/) | Web application security scanner |
+| [`@mcp-security/burpsuite`](./servers/burpsuite) | [Burp Suite](https://portswigger.net/burp) | Web security testing platform |
+
+### Threat Intelligence & OSINT (3)
+
+| Package | Tool | Description |
+|---------|------|-------------|
+| [`@mcp-security/shodan`](./servers/shodan) | [Shodan](https://www.shodan.io/) | Internet-connected device search engine |
+| [`@mcp-security/virustotal`](./servers/virustotal) | [VirusTotal](https://www.virustotal.com/) | Malware and URL threat analysis |
+| [`@mcp-security/bloodhound`](./servers/bloodhound) | [BloodHound](https://github.com/BloodHoundAD/BloodHound) | Active Directory attack path analysis |
+
+### Cloud & Infrastructure Security (4)
+
+| Package | Tool | Description |
+|---------|------|-------------|
+| [`@mcp-security/scoutsuite`](./servers/scoutsuite) | [ScoutSuite](https://github.com/nccgroup/ScoutSuite) | Cloud security auditing (AWS/Azure/GCP) |
+| [`@mcp-security/prowler`](./servers/prowler) | [Prowler](https://github.com/prowler-cloud/prowler) | AWS/Azure/GCP security assessment |
+| [`@mcp-security/trivy`](./servers/trivy) | [Trivy](https://github.com/aquasecurity/trivy) | Container and IaC vulnerability scanner |
+| [`@mcp-security/checkov`](./servers/checkov) | [Checkov](https://github.com/bridgecrewio/checkov) | Infrastructure as Code security scanner |
+
+### Code & Secret Security (2)
+
+| Package | Tool | Description |
+|---------|------|-------------|
+| [`@mcp-security/semgrep`](./servers/semgrep) | [Semgrep](https://semgrep.dev/) | Static analysis for security vulnerabilities |
+| [`@mcp-security/gitleaks`](./servers/gitleaks) | [Gitleaks](https://github.com/gitleaks/gitleaks) | Secret detection in git repositories |
+
+### Network & AD Security (2)
+
+| Package | Tool | Description |
+|---------|------|-------------|
+| [`@mcp-security/crackmapexec`](./servers/crackmapexec) | [CrackMapExec](https://github.com/byt3bl33d3r/CrackMapExec) | Network/AD penetration testing toolkit |
+| [`@mcp-security/ghidra`](./servers/ghidra) | [Ghidra](https://ghidra-sre.org/) | NSA reverse engineering framework |
+
+### Specialized Tools (4)
+
+| Package | Tool | Description |
+|---------|------|-------------|
+| [`@mcp-security/mobsf`](./servers/mobsf) | [MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF) | Mobile app security analysis |
+| [`@mcp-security/sslscan`](./servers/sslscan) | [SSLScan](https://github.com/rbsec/sslscan) | SSL/TLS configuration testing |
+| [`@mcp-security/http-headers`](./servers/http-headers) | Custom | Security headers analysis |
+| [`@mcp-security/commix`](./servers/commix) | [Commix](https://github.com/commixproject/commix) | Command injection exploitation |
 
 ## Installation
 
@@ -132,9 +166,21 @@ Add to your `claude_desktop_config.json`:
       "command": "npx",
       "args": ["-y", "@mcp-security/nuclei", "/usr/bin/nuclei"]
     },
-    "sqlmap": {
+    "shodan": {
       "command": "npx",
-      "args": ["-y", "@mcp-security/sqlmap", "python3", "/path/to/sqlmap.py"]
+      "args": ["-y", "@mcp-security/shodan", "YOUR_SHODAN_API_KEY"]
+    },
+    "semgrep": {
+      "command": "npx",
+      "args": ["-y", "@mcp-security/semgrep", "semgrep"]
+    },
+    "trivy": {
+      "command": "npx",
+      "args": ["-y", "@mcp-security/trivy", "trivy"]
+    },
+    "gitleaks": {
+      "command": "npx",
+      "args": ["-y", "@mcp-security/gitleaks", "gitleaks"]
     }
   }
 }
@@ -157,13 +203,24 @@ Results:
 ```
 
 ```
-User: Check example.com for SQL injection vulnerabilities
+User: Search Shodan for exposed MongoDB databases
 
-Claude: I'll use SQLmap to test for SQL injection.
-[Uses sqlmap MCP server]
+Claude: I'll search Shodan for MongoDB instances.
+[Uses shodan MCP server]
 
-Testing URL: https://example.com/search?q=test
-[Scan results...]
+Found 15,432 results for MongoDB servers...
+```
+
+```
+User: Scan my Terraform files for security issues
+
+Claude: I'll run Checkov to analyze your IaC files.
+[Uses checkov MCP server]
+
+Found 12 security issues:
+- 3 Critical: S3 bucket encryption disabled
+- 5 High: Security group allows all traffic
+- 4 Medium: Missing resource tags
 ```
 
 ## Development
@@ -192,8 +249,8 @@ pnpm test
 ./scripts/create-mcp-server.sh my-tool
 
 # Or manually create the structure
-mkdir my-tool
-cd my-tool
+mkdir servers/my-tool
+cd servers/my-tool
 npm init -y
 ```
 
@@ -205,6 +262,7 @@ npm init -y
 - Some tools require root/administrator privileges
 - Be aware of rate limiting and scan detection
 - Follow responsible disclosure practices
+- API keys (Shodan, VirusTotal, etc.) should be kept secure
 
 ## Contributing
 

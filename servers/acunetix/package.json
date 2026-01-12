@@ -1,0 +1,47 @@
+{
+  "name": "@mcp-security/acunetix",
+  "version": "1.0.0",
+  "description": "MCP server for Acunetix Web Vulnerability Scanner",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "bin": {
+    "mcp-acunetix": "build/index.js"
+  },
+  "files": [
+    "build",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "start": "node build/index.js",
+    "clean": "rm -rf build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "acunetix",
+    "web-scanner",
+    "vulnerability-scanner",
+    "security",
+    "penetration-testing",
+    "ai",
+    "claude"
+  ],
+  "author": "RaptorX Security",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.8.0",
+    "zod": "^3.24.0",
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/node-fetch": "^2.6.11",
+    "tsx": "^4.19.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

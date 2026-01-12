@@ -1,11 +1,11 @@
 {
-  "name": "@mcp-security/scoutsuite",
+  "name": "@mcp-security/semgrep",
   "version": "1.0.0",
-  "description": "MCP server for ScoutSuite - Cloud security auditing (AWS/Azure/GCP)",
+  "description": "MCP server for Semgrep - Static analysis and code security scanning",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "bin": {
-    "mcp-scoutsuite": "build/index.js"
+    "mcp-semgrep": "build/index.js"
   },
   "files": [
     "build",
@@ -22,32 +22,28 @@
   "keywords": [
     "mcp",
     "model-context-protocol",
-    "scoutsuite",
+    "semgrep",
+    "sast",
+    "static-analysis",
+    "code-security",
     "security",
-    "penetration-testing",
     "ai",
-    "claude",
-    "cloud-security",
-    "aws",
-    "azure",
-    "gcp",
-    "audit"
+    "claude"
   ],
   "author": "MCP Security Contributors",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/hackersatyamrastogi/Cyber_MCPs.git",
-    "directory": "servers/scoutsuite"
+    "directory": "servers/semgrep"
   },
   "bugs": {
     "url": "https://github.com/hackersatyamrastogi/Cyber_MCPs/issues"
   },
-  "homepage": "https://github.com/hackersatyamrastogi/Cyber_MCPs/tree/main/servers/scoutsuite#readme",
+  "homepage": "https://github.com/hackersatyamrastogi/Cyber_MCPs/tree/main/servers/semgrep#readme",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.8.0",
-    "zod": "^3.24.0",
-    "node-pty": "^1.0.0"
+    "zod": "^3.24.0"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

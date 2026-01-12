@@ -1,11 +1,11 @@
 {
-  "name": "@mcp-security/scoutsuite",
+  "name": "@mcp-security/burpsuite",
   "version": "1.0.0",
-  "description": "MCP server for ScoutSuite - Cloud security auditing (AWS/Azure/GCP)",
+  "description": "MCP server for Burp Suite - Web application security testing",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "bin": {
-    "mcp-scoutsuite": "build/index.js"
+    "mcp-burpsuite": "build/index.js"
   },
   "files": [
     "build",
@@ -22,32 +22,28 @@
   "keywords": [
     "mcp",
     "model-context-protocol",
-    "scoutsuite",
-    "security",
+    "burpsuite",
+    "burp",
+    "web-security",
     "penetration-testing",
+    "security",
     "ai",
-    "claude",
-    "cloud-security",
-    "aws",
-    "azure",
-    "gcp",
-    "audit"
+    "claude"
   ],
   "author": "MCP Security Contributors",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/hackersatyamrastogi/Cyber_MCPs.git",
-    "directory": "servers/scoutsuite"
+    "directory": "servers/burpsuite"
   },
   "bugs": {
     "url": "https://github.com/hackersatyamrastogi/Cyber_MCPs/issues"
   },
-  "homepage": "https://github.com/hackersatyamrastogi/Cyber_MCPs/tree/main/servers/scoutsuite#readme",
+  "homepage": "https://github.com/hackersatyamrastogi/Cyber_MCPs/tree/main/servers/burpsuite#readme",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.8.0",
-    "zod": "^3.24.0",
-    "node-pty": "^1.0.0"
+    "zod": "^3.24.0"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
