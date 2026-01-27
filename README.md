@@ -1,148 +1,131 @@
-# Cyber MCPs - Security Tools for AI
+# Pentesting Cyber MCP
 
 <div align="center">
 
-![MCP Security](https://img.shields.io/badge/MCP-Security%20Tools-blue?style=for-the-badge)
+![MCP Security](https://img.shields.io/badge/MCP-Security%20Tools-red?style=for-the-badge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![MCP SDK](https://img.shields.io/badge/MCP%20SDK-1.8+-purple?style=for-the-badge)](https://github.com/modelcontextprotocol/sdk)
-[![GitHub](https://img.shields.io/github/stars/hackersatyamrastogi/pentesting-cyber-mcp?style=for-the-badge)](https://github.com/hackersatyamrastogi/pentesting-cyber-mcp)
+[![MCP SDK](https://img.shields.io/badge/MCP%20SDK-1.8+-purple?style=for-the-badge)](https://modelcontextprotocol.io/)
+[![Tools](https://img.shields.io/badge/Tools-50-orange?style=for-the-badge)]()
 
-**A collection of Model Context Protocol (MCP) servers for security tools**
+**50 MCP Servers for Security Tools**
 
-*Enabling AI-powered security assessments through standardized tool integration*
+*Standardized protocol interface for pentesting and bug bounty automation*
 
-[Installation](#installation) | [Available Servers](#available-servers) | [Usage](#usage) | [Security](#-security-warning) | [Contributing](#contributing)
+[Installation](#installation) | [Available Tools](#available-mcp-servers) | [Usage](#usage) | [Contributing](#contributing)
 
 </div>
 
 ---
 
-## Overview
+## What is MCP?
 
-This monorepo contains **50 MCP servers** that wrap popular security tools, making them accessible to AI assistants through the [Model Context Protocol](https://modelcontextprotocol.io/).
+**Model Context Protocol (MCP)** is an open protocol that standardizes how applications expose tools and capabilities. This repository provides MCP server implementations for 50 popular security tools.
 
-Each server is:
-- **Standalone** - Can be installed and used independently
-- **Type-safe** - Written in TypeScript with full type definitions
-- **Well-documented** - Includes usage examples and configuration guides
-- **Production-ready** - Published on npm with semantic versioning
-
-### Unified Server
-
-Connect **all 50 tools with a single command**:
-
-```bash
-# Run the unified server
-node servers/unified/build/index.js
-
-# Or generate config for all servers
-./scripts/generate-config.sh --install
-```
+Each MCP server:
+- Wraps a security tool with a standardized interface
+- Exposes tool functionality through MCP protocol
+- Can be used with any MCP-compatible client
+- Runs as a standalone process
 
 ---
 
-## Available Servers
+## Available MCP Servers
 
-### Reconnaissance Tools (15)
+### Reconnaissance (15)
 
-| Package | Tool | Description |
-|---------|------|-------------|
-| [`@mcp-security/amass`](./servers/amass) | [Amass](https://github.com/owasp-amass/amass) | Subdomain enumeration and attack surface mapping |
-| [`@mcp-security/alterx`](./servers/alterx) | [Alterx](https://github.com/projectdiscovery/alterx) | Fast subdomain wordlist generator |
-| [`@mcp-security/assetfinder`](./servers/assetfinder) | [Assetfinder](https://github.com/tomnomnom/assetfinder) | Asset discovery from various sources |
-| [`@mcp-security/cero`](./servers/cero) | [Cero](https://github.com/glebarez/cero) | Certificate-based subdomain discovery |
-| [`@mcp-security/crtsh`](./servers/crtsh) | [crt.sh](https://crt.sh) | Certificate transparency log search |
-| [`@mcp-security/dnsx`](./servers/dnsx) | [dnsx](https://github.com/projectdiscovery/dnsx) | Fast and multi-purpose DNS toolkit |
-| [`@mcp-security/shuffledns`](./servers/shuffledns) | [ShuffleDNS](https://github.com/projectdiscovery/shuffledns) | High-speed DNS resolver and bruteforcer |
-| [`@mcp-security/httpx`](./servers/httpx) | [httpx](https://github.com/projectdiscovery/httpx) | Fast HTTP probing and analysis |
-| [`@mcp-security/katana`](./servers/katana) | [Katana](https://github.com/projectdiscovery/katana) | Next-gen web crawling framework |
-| [`@mcp-security/gowitness`](./servers/gowitness) | [GoWitness](https://github.com/sensepost/gowitness) | Website screenshot utility |
-| [`@mcp-security/waybackurls`](./servers/waybackurls) | [Waybackurls](https://github.com/tomnomnom/waybackurls) | Fetch URLs from Wayback Machine |
-| [`@mcp-security/masscan`](./servers/masscan) | [Masscan](https://github.com/robertdavidgraham/masscan) | High-speed port scanner |
-| [`@mcp-security/subfinder`](./servers/subfinder) | [Subfinder](https://github.com/projectdiscovery/subfinder) | Fast passive subdomain enumeration |
-| [`@mcp-security/uncover`](./servers/uncover) | [Uncover](https://github.com/projectdiscovery/uncover) | Search Shodan, Censys, Fofa, and more |
-| [`@mcp-security/notify`](./servers/notify) | [Notify](https://github.com/projectdiscovery/notify) | Stream results to Slack, Discord, Telegram |
+| MCP Server | Tool | Description |
+|------------|------|-------------|
+| `amass` | [Amass](https://github.com/owasp-amass/amass) | Attack surface mapping & subdomain enumeration |
+| `alterx` | [Alterx](https://github.com/projectdiscovery/alterx) | Subdomain wordlist generator |
+| `assetfinder` | [Assetfinder](https://github.com/tomnomnom/assetfinder) | Asset discovery |
+| `cero` | [Cero](https://github.com/glebarez/cero) | Certificate-based subdomain discovery |
+| `crtsh` | [crt.sh](https://crt.sh) | Certificate transparency logs |
+| `dnsx` | [dnsx](https://github.com/projectdiscovery/dnsx) | DNS toolkit |
+| `httpx` | [httpx](https://github.com/projectdiscovery/httpx) | HTTP probing |
+| `katana` | [Katana](https://github.com/projectdiscovery/katana) | Web crawler |
+| `gowitness` | [GoWitness](https://github.com/sensepost/gowitness) | Screenshot utility |
+| `masscan` | [Masscan](https://github.com/robertdavidgraham/masscan) | Port scanner |
+| `shuffledns` | [ShuffleDNS](https://github.com/projectdiscovery/shuffledns) | DNS bruteforcer |
+| `subfinder` | [Subfinder](https://github.com/projectdiscovery/subfinder) | Subdomain enumeration |
+| `uncover` | [Uncover](https://github.com/projectdiscovery/uncover) | Shodan/Censys/Fofa search |
+| `waybackurls` | [Waybackurls](https://github.com/tomnomnom/waybackurls) | Wayback Machine URLs |
+| `notify` | [Notify](https://github.com/projectdiscovery/notify) | Notification streaming |
 
-### Vulnerability Assessment (11)
+### Vulnerability Scanning (11)
 
-| Package | Tool | Description |
-|---------|------|-------------|
-| [`@mcp-security/nuclei`](./servers/nuclei) | [Nuclei](https://github.com/projectdiscovery/nuclei) | Template-based vulnerability scanner |
-| [`@mcp-security/nmap`](./servers/nmap) | [Nmap](https://nmap.org) | Network discovery and security auditing |
-| [`@mcp-security/sqlmap`](./servers/sqlmap) | [SQLmap](https://sqlmap.org) | SQL injection detection and exploitation |
-| [`@mcp-security/ffuf`](./servers/ffuf) | [FFUF](https://github.com/ffuf/ffuf) | Fast web fuzzer |
-| [`@mcp-security/arjun`](./servers/arjun) | [Arjun](https://github.com/s0md3v/Arjun) | HTTP parameter discovery |
-| [`@mcp-security/smuggler`](./servers/smuggler) | [Smuggler](https://github.com/defparam/smuggler) | HTTP request smuggling detector |
-| [`@mcp-security/wpscan`](./servers/wpscan) | [WPScan](https://wpscan.com) | WordPress security scanner |
-| [`@mcp-security/nessus`](./servers/nessus) | [Nessus](https://www.tenable.com/products/nessus) | Vulnerability scanner integration |
-| [`@mcp-security/dalfox`](./servers/dalfox) | [Dalfox](https://github.com/hahwul/dalfox) | XSS vulnerability scanner |
-| [`@mcp-security/zap`](./servers/zap) | [OWASP ZAP](https://www.zaproxy.org/) | Web application security scanner |
-| [`@mcp-security/burpsuite`](./servers/burpsuite) | [Burp Suite](https://portswigger.net/burp) | Web security testing platform |
+| MCP Server | Tool | Description |
+|------------|------|-------------|
+| `nuclei` | [Nuclei](https://github.com/projectdiscovery/nuclei) | Template-based scanner |
+| `nmap` | [Nmap](https://nmap.org) | Network scanner |
+| `sqlmap` | [SQLmap](https://sqlmap.org) | SQL injection |
+| `ffuf` | [FFUF](https://github.com/ffuf/ffuf) | Web fuzzer |
+| `arjun` | [Arjun](https://github.com/s0md3v/Arjun) | Parameter discovery |
+| `smuggler` | [Smuggler](https://github.com/defparam/smuggler) | Request smuggling |
+| `wpscan` | [WPScan](https://wpscan.com) | WordPress scanner |
+| `nessus` | [Nessus](https://www.tenable.com/products/nessus) | Vulnerability scanner |
+| `dalfox` | [Dalfox](https://github.com/hahwul/dalfox) | XSS scanner |
+| `zap` | [OWASP ZAP](https://www.zaproxy.org/) | Web app scanner |
+| `burpsuite` | [Burp Suite](https://portswigger.net/burp) | Web security testing |
 
-### Exploitation & Password Attacks (3)
+### Exploitation & Password (3)
 
-| Package | Tool | Description |
-|---------|------|-------------|
-| [`@mcp-security/metasploit`](./servers/metasploit) | [Metasploit](https://www.metasploit.com/) | Penetration testing framework |
-| [`@mcp-security/hydra`](./servers/hydra) | [THC-Hydra](https://github.com/vanhauser-thc/thc-hydra) | Online password brute force tool |
-| [`@mcp-security/hashcat`](./servers/hashcat) | [Hashcat](https://hashcat.net/hashcat/) | GPU-accelerated password cracking |
+| MCP Server | Tool | Description |
+|------------|------|-------------|
+| `metasploit` | [Metasploit](https://www.metasploit.com/) | Exploitation framework |
+| `hydra` | [THC-Hydra](https://github.com/vanhauser-thc/thc-hydra) | Password brute force |
+| `hashcat` | [Hashcat](https://hashcat.net/hashcat/) | Password cracking |
 
-### Threat Intelligence & OSINT (3)
+### Cloud Security (4)
 
-| Package | Tool | Description |
-|---------|------|-------------|
-| [`@mcp-security/shodan`](./servers/shodan) | [Shodan](https://www.shodan.io/) | Internet-connected device search engine |
-| [`@mcp-security/virustotal`](./servers/virustotal) | [VirusTotal](https://www.virustotal.com/) | Malware and URL threat analysis |
-| [`@mcp-security/bloodhound`](./servers/bloodhound) | [BloodHound](https://github.com/BloodHoundAD/BloodHound) | Active Directory attack path analysis |
-
-### Cloud & Infrastructure Security (4)
-
-| Package | Tool | Description |
-|---------|------|-------------|
-| [`@mcp-security/scoutsuite`](./servers/scoutsuite) | [ScoutSuite](https://github.com/nccgroup/ScoutSuite) | Cloud security auditing (AWS/Azure/GCP) |
-| [`@mcp-security/prowler`](./servers/prowler) | [Prowler](https://github.com/prowler-cloud/prowler) | AWS/Azure/GCP security assessment |
-| [`@mcp-security/trivy`](./servers/trivy) | [Trivy](https://github.com/aquasecurity/trivy) | Container and IaC vulnerability scanner |
-| [`@mcp-security/checkov`](./servers/checkov) | [Checkov](https://github.com/bridgecrewio/checkov) | Infrastructure as Code security scanner |
+| MCP Server | Tool | Description |
+|------------|------|-------------|
+| `prowler` | [Prowler](https://github.com/prowler-cloud/prowler) | AWS/Azure/GCP security |
+| `scoutsuite` | [ScoutSuite](https://github.com/nccgroup/ScoutSuite) | Cloud auditing |
+| `trivy` | [Trivy](https://github.com/aquasecurity/trivy) | Container/IaC scanner |
+| `checkov` | [Checkov](https://github.com/bridgecrewio/checkov) | IaC security |
 
 ### Kubernetes Security (3)
 
-| Package | Tool | Description |
-|---------|------|-------------|
-| [`@mcp-security/kube-hunter`](./servers/kube-hunter) | [kube-hunter](https://github.com/aquasecurity/kube-hunter) | Hunt for K8s security weaknesses |
-| [`@mcp-security/kubeaudit`](./servers/kubeaudit) | [kubeaudit](https://github.com/Shopify/kubeaudit) | Kubernetes security auditing |
-| [`@mcp-security/kube-bench`](./servers/kube-bench) | [kube-bench](https://github.com/aquasecurity/kube-bench) | CIS Kubernetes Benchmark checks |
+| MCP Server | Tool | Description |
+|------------|------|-------------|
+| `kube-hunter` | [kube-hunter](https://github.com/aquasecurity/kube-hunter) | K8s penetration testing |
+| `kubeaudit` | [kubeaudit](https://github.com/Shopify/kubeaudit) | K8s security audit |
+| `kube-bench` | [kube-bench](https://github.com/aquasecurity/kube-bench) | CIS benchmark |
 
-### Code & Secret Security (2)
+### Threat Intelligence (3)
 
-| Package | Tool | Description |
-|---------|------|-------------|
-| [`@mcp-security/semgrep`](./servers/semgrep) | [Semgrep](https://semgrep.dev/) | Static analysis for security vulnerabilities |
-| [`@mcp-security/gitleaks`](./servers/gitleaks) | [Gitleaks](https://github.com/gitleaks/gitleaks) | Secret detection in git repositories |
+| MCP Server | Tool | Description |
+|------------|------|-------------|
+| `shodan` | [Shodan](https://www.shodan.io/) | Internet search engine |
+| `virustotal` | [VirusTotal](https://www.virustotal.com/) | Malware analysis |
+| `bloodhound` | [BloodHound](https://github.com/BloodHoundAD/BloodHound) | AD attack paths |
 
-### Network & AD Security (2)
+### Code Security (2)
 
-| Package | Tool | Description |
-|---------|------|-------------|
-| [`@mcp-security/crackmapexec`](./servers/crackmapexec) | [CrackMapExec](https://github.com/byt3bl33d3r/CrackMapExec) | Network/AD penetration testing toolkit |
-| [`@mcp-security/ghidra`](./servers/ghidra) | [Ghidra](https://ghidra-sre.org/) | NSA reverse engineering framework |
+| MCP Server | Tool | Description |
+|------------|------|-------------|
+| `semgrep` | [Semgrep](https://semgrep.dev/) | Static analysis |
+| `gitleaks` | [Gitleaks](https://github.com/gitleaks/gitleaks) | Secret detection |
 
-### Specialized Tools (6)
+### Network & AD (2)
 
-| Package | Tool | Description |
-|---------|------|-------------|
-| [`@mcp-security/mobsf`](./servers/mobsf) | [MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF) | Mobile app security analysis |
-| [`@mcp-security/sslscan`](./servers/sslscan) | [SSLScan](https://github.com/rbsec/sslscan) | SSL/TLS configuration testing |
-| [`@mcp-security/http-headers`](./servers/http-headers) | Custom | Security headers analysis |
-| [`@mcp-security/commix`](./servers/commix) | [Commix](https://github.com/commixproject/commix) | Command injection exploitation |
-| [`@mcp-security/acunetix`](./servers/acunetix) | [Acunetix](https://www.acunetix.com/) | Web vulnerability scanner |
-| [`@mcp-security/nextjs-scanner`](./servers/nextjs-scanner) | Custom | Next.js security scanner |
+| MCP Server | Tool | Description |
+|------------|------|-------------|
+| `crackmapexec` | [CrackMapExec](https://github.com/byt3bl33d3r/CrackMapExec) | AD/SMB toolkit |
+| `ghidra` | [Ghidra](https://ghidra-sre.org/) | Reverse engineering |
 
-### Meta Server (1)
+### Specialized (7)
 
-| Package | Description |
-|---------|-------------|
-| [`@mcp-security/unified`](./servers/unified) | Single MCP server exposing all 50 tools |
+| MCP Server | Tool | Description |
+|------------|------|-------------|
+| `acunetix` | [Acunetix](https://www.acunetix.com/) | Web vulnerability scanner |
+| `mobsf` | [MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF) | Mobile security |
+| `sslscan` | [SSLScan](https://github.com/rbsec/sslscan) | SSL/TLS testing |
+| `http-headers` | Custom | Security headers |
+| `commix` | [Commix](https://github.com/commixproject/commix) | Command injection |
+| `nextjs-scanner` | Custom | Next.js CVE scanner |
+| `unified` | All-in-one | Single server for all tools |
 
 ---
 
@@ -151,112 +134,10 @@ node servers/unified/build/index.js
 ### Prerequisites
 
 - Node.js 18+
-- The underlying security tool installed on your system
-- Any MCP-compatible AI client
+- The underlying security tool installed
+- Any MCP-compatible client
 
-### Quick Start
-
-```bash
-# Install a specific MCP server
-npm install -g @mcp-security/nmap
-
-# Or use npx directly
-npx @mcp-security/nmap /usr/bin/nmap
-```
-
-### MCP Client Configuration
-
-Add to your MCP client configuration (e.g., `mcp_config.json`):
-
-```json
-{
-  "mcpServers": {
-    "nmap": {
-      "command": "npx",
-      "args": ["-y", "@mcp-security/nmap", "/usr/bin/nmap"]
-    },
-    "nuclei": {
-      "command": "npx",
-      "args": ["-y", "@mcp-security/nuclei", "/usr/bin/nuclei"]
-    },
-    "metasploit": {
-      "command": "npx",
-      "args": ["-y", "@mcp-security/metasploit", "msfconsole"]
-    },
-    "hydra": {
-      "command": "npx",
-      "args": ["-y", "@mcp-security/hydra", "hydra"]
-    },
-    "hashcat": {
-      "command": "npx",
-      "args": ["-y", "@mcp-security/hashcat", "hashcat"]
-    },
-    "kube-bench": {
-      "command": "npx",
-      "args": ["-y", "@mcp-security/kube-bench", "kube-bench"]
-    }
-  }
-}
-```
-
----
-
-## Usage
-
-Once configured, you can interact with security tools through natural language:
-
-```
-User: Scan 192.168.1.1 for open ports
-
-AI: I'll run an Nmap scan on that target.
-[Uses nmap MCP server]
-
-Results:
-- Port 22/tcp: open (SSH)
-- Port 80/tcp: open (HTTP)
-- Port 443/tcp: open (HTTPS)
-```
-
-```
-User: Search Shodan for exposed MongoDB databases
-
-AI: I'll search Shodan for MongoDB instances.
-[Uses shodan MCP server]
-
-Found 15,432 results for MongoDB servers...
-```
-
-```
-User: Check my Kubernetes cluster for CIS benchmark compliance
-
-AI: I'll run kube-bench to check CIS compliance.
-[Uses kube-bench MCP server]
-
-CIS Benchmark Summary:
-- PASS: 45 (75%)
-- FAIL: 12
-- WARN: 8
-```
-
----
-
-## Security Warning
-
-> **IMPORTANT**: These tools are intended for authorized security testing only.
-
-- Always obtain proper authorization before scanning networks or systems
-- Some tools require root/administrator privileges
-- Be aware of rate limiting and scan detection
-- Follow responsible disclosure practices
-- API keys (Shodan, VirusTotal, etc.) should be kept secure
-
-See [SECURITY.md](SECURITY.md) for detailed security guidelines.
-
----
-
-## Development
-
-### Setting Up the Monorepo
+### Install Individual Server
 
 ```bash
 # Clone the repository
@@ -266,62 +147,163 @@ cd pentesting-cyber-mcp
 # Install dependencies
 pnpm install
 
-# Build all packages
+# Build all servers
 pnpm build
 
-# Run tests
-pnpm test
+# Or build specific server
+cd servers/nmap && pnpm build
 ```
 
-### Creating a New MCP Server
+### Run MCP Server
 
 ```bash
-# Use the generator script
-./scripts/create-mcp-server.sh my-tool
+# Run nmap MCP server
+node servers/nmap/build/index.js /usr/bin/nmap
 
-# Or manually create the structure
-mkdir servers/my-tool
-cd servers/my-tool
-npm init -y
+# Run nuclei MCP server
+node servers/nuclei/build/index.js /usr/bin/nuclei
+
+# Run metasploit MCP server
+node servers/metasploit/build/index.js msfconsole
 ```
+
+---
+
+## Configuration
+
+### MCP Client Configuration
+
+Add to your MCP client config:
+
+```json
+{
+  "mcpServers": {
+    "nmap": {
+      "command": "node",
+      "args": ["path/to/servers/nmap/build/index.js", "/usr/bin/nmap"]
+    },
+    "nuclei": {
+      "command": "node",
+      "args": ["path/to/servers/nuclei/build/index.js", "nuclei"]
+    },
+    "sqlmap": {
+      "command": "node",
+      "args": ["path/to/servers/sqlmap/build/index.js", "sqlmap"]
+    },
+    "metasploit": {
+      "command": "node",
+      "args": ["path/to/servers/metasploit/build/index.js", "msfconsole"]
+    }
+  }
+}
+```
+
+### Unified Server (All Tools)
+
+Use the unified server to access all 50 tools through a single MCP connection:
+
+```json
+{
+  "mcpServers": {
+    "security-tools": {
+      "command": "node",
+      "args": ["path/to/servers/unified/build/index.js"]
+    }
+  }
+}
+```
+
+---
+
+## Project Structure
+
+```
+pentesting-cyber-mcp/
+├── servers/
+│   ├── nmap/
+│   │   ├── src/index.ts
+│   │   ├── package.json
+│   │   └── README.md
+│   ├── nuclei/
+│   ├── sqlmap/
+│   ├── metasploit/
+│   ├── hydra/
+│   ├── hashcat/
+│   ├── ... (50 servers)
+│   └── unified/
+├── scripts/
+│   └── generate-config.sh
+├── package.json
+└── README.md
+```
+
+---
+
+## Usage Example
+
+Each MCP server exposes tools that can be called through the MCP protocol:
+
+```typescript
+// Example: nmap MCP server exposes these tools
+- nmap-scan          // Run port scan
+- nmap-service-scan  // Service detection
+- nmap-vuln-scan     // Vulnerability scripts
+
+// Example: nuclei MCP server
+- do-nuclei          // Run template scan
+- get-nuclei-tags    // List available tags
+
+// Example: metasploit MCP server
+- msf-search         // Search modules
+- msf-exploit-check  // Check vulnerability
+- msfvenom-generate  // Generate payload
+```
+
+---
+
+## Security Notice
+
+⚠️ **For authorized testing only**
+
+- Obtain proper authorization before scanning
+- Some tools require root/admin privileges
+- Follow responsible disclosure practices
+- Secure your API keys
+
+See [SECURITY.md](SECURITY.md) for details.
 
 ---
 
 ## Contributing
 
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-### Ways to Contribute
+**Add a new MCP server:**
 
-- Add new MCP servers for security tools
-- Improve existing server implementations
-- Enhance documentation and examples
-- Report bugs and suggest features
+```bash
+mkdir servers/my-tool
+cd servers/my-tool
+# Create src/index.ts, package.json, README.md
+```
 
 ---
 
 ## License
 
-This project is licensed under the MIT License - see [LICENSE](LICENSE) for details.
+MIT License - see [LICENSE](LICENSE)
 
 ## Author
 
 **Satyam Rastogi** - [@hackersatyamrastogi](https://github.com/hackersatyamrastogi)
 
-## Acknowledgments
-
-- [Model Context Protocol](https://modelcontextprotocol.io/) - Open standard for AI tool integration
-- All the amazing open-source security tools this project wraps
-- The security research community
-
 ---
 
 <div align="center">
 
-**Cyber MCPs - Security Tools for AI**
+**Pentesting Cyber MCP**
 
-*Making security tools accessible to AI assistants*
+*50 Security Tools • One Protocol*
 
-[![GitHub](https://img.shields.io/badge/GitHub-hackersatyamrastogi-black?style=flat&logo=github)](https://github.com/hackersatyamrastogi)
+[![GitHub](https://img.shields.io/badge/GitHub-pentesting--cyber--mcp-black?style=flat&logo=github)](https://github.com/hackersatyamrastogi/pentesting-cyber-mcp)
 
 </div>
