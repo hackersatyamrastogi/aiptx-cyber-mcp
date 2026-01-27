@@ -1,0 +1,60 @@
+{
+  "name": "@mcp-security/hydra",
+  "version": "1.0.0",
+  "description": "MCP server for THC-Hydra - Online password attack tool",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "bin": {
+    "mcp-hydra": "build/index.js"
+  },
+  "files": [
+    "build",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "start": "node build/index.js",
+    "clean": "rm -rf build",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "hydra",
+    "security",
+    "penetration-testing",
+    "ai",
+    "claude",
+    "password-cracking",
+    "brute-force",
+    "authentication"
+  ],
+  "author": "Satyam Rastogi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hackersatyamrastogi/pentesting-cyber-mcp.git",
+    "directory": "servers/hydra"
+  },
+  "bugs": {
+    "url": "https://github.com/hackersatyamrastogi/pentesting-cyber-mcp/issues"
+  },
+  "homepage": "https://github.com/hackersatyamrastogi/pentesting-cyber-mcp/tree/main/servers/hydra#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.8.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

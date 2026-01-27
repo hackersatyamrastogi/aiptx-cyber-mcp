@@ -1,0 +1,61 @@
+{
+  "name": "@mcp-security/kube-bench",
+  "version": "1.0.0",
+  "description": "MCP server for kube-bench - CIS Kubernetes Benchmark checks",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "bin": {
+    "mcp-kube-bench": "build/index.js"
+  },
+  "files": [
+    "build",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "start": "node build/index.js",
+    "clean": "rm -rf build",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "kube-bench",
+    "security",
+    "penetration-testing",
+    "ai",
+    "claude",
+    "kubernetes",
+    "k8s",
+    "cis-benchmark",
+    "compliance"
+  ],
+  "author": "Satyam Rastogi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hackersatyamrastogi/pentesting-cyber-mcp.git",
+    "directory": "servers/kube-bench"
+  },
+  "bugs": {
+    "url": "https://github.com/hackersatyamrastogi/pentesting-cyber-mcp/issues"
+  },
+  "homepage": "https://github.com/hackersatyamrastogi/pentesting-cyber-mcp/tree/main/servers/kube-bench#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.8.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
