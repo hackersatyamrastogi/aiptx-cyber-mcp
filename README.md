@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![MCP SDK](https://img.shields.io/badge/MCP%20SDK-1.8+-purple?style=for-the-badge)](https://github.com/modelcontextprotocol/sdk)
-[![GitHub](https://img.shields.io/github/stars/hackersatyamrastogi/Cyber_MCPs?style=for-the-badge)](https://github.com/hackersatyamrastogi/Cyber_MCPs)
+[![GitHub](https://img.shields.io/github/stars/hackersatyamrastogi/pentesting-cyber-mcp?style=for-the-badge)](https://github.com/hackersatyamrastogi/pentesting-cyber-mcp)
 
 **A collection of Model Context Protocol (MCP) servers for security tools**
 
@@ -18,39 +18,9 @@
 
 ---
 
-## ⚠️ SECURITY WARNING
-
-<table>
-<tr>
-<td>
-
-### 🚨 READ BEFORE USING
-
-**These MCP servers wrap powerful security tools that can:**
-
-- Execute system commands on your machine
-- Scan networks and systems (potentially illegally without authorization)
-- Expose your IP address to targets
-- Require elevated privileges (root/admin)
-
-**CRITICAL SECURITY RISKS:**
-
-1. **Command Injection** - User inputs flow to shell commands
-2. **Privilege Escalation** - Some tools need root access
-3. **Legal Liability** - Unauthorized scanning is illegal
-4. **Data Exposure** - Scan results may leak through AI systems
-
-📖 **Read the full [SECURITY.md](SECURITY.md) before deploying**
-
-</td>
-</tr>
-</table>
-
----
-
 ## Overview
 
-This monorepo contains **40+ MCP servers** that wrap popular security tools, making them accessible to AI assistants through the [Model Context Protocol](https://modelcontextprotocol.io/).
+This monorepo contains **50 MCP servers** that wrap popular security tools, making them accessible to AI assistants through the [Model Context Protocol](https://modelcontextprotocol.io/).
 
 Each server is:
 - **Standalone** - Can be installed and used independently
@@ -58,9 +28,9 @@ Each server is:
 - **Well-documented** - Includes usage examples and configuration guides
 - **Production-ready** - Published on npm with semantic versioning
 
-### 🚀 Unified Server (NEW)
+### Unified Server
 
-Connect **all 40+ tools with a single command**:
+Connect **all 50 tools with a single command**:
 
 ```bash
 # Run the unified server
@@ -70,9 +40,11 @@ node servers/unified/build/index.js
 ./scripts/generate-config.sh --install
 ```
 
+---
+
 ## Available Servers
 
-### Reconnaissance Tools (12)
+### Reconnaissance Tools (15)
 
 | Package | Tool | Description |
 |---------|------|-------------|
@@ -81,6 +53,7 @@ node servers/unified/build/index.js
 | [`@mcp-security/assetfinder`](./servers/assetfinder) | [Assetfinder](https://github.com/tomnomnom/assetfinder) | Asset discovery from various sources |
 | [`@mcp-security/cero`](./servers/cero) | [Cero](https://github.com/glebarez/cero) | Certificate-based subdomain discovery |
 | [`@mcp-security/crtsh`](./servers/crtsh) | [crt.sh](https://crt.sh) | Certificate transparency log search |
+| [`@mcp-security/dnsx`](./servers/dnsx) | [dnsx](https://github.com/projectdiscovery/dnsx) | Fast and multi-purpose DNS toolkit |
 | [`@mcp-security/shuffledns`](./servers/shuffledns) | [ShuffleDNS](https://github.com/projectdiscovery/shuffledns) | High-speed DNS resolver and bruteforcer |
 | [`@mcp-security/httpx`](./servers/httpx) | [httpx](https://github.com/projectdiscovery/httpx) | Fast HTTP probing and analysis |
 | [`@mcp-security/katana`](./servers/katana) | [Katana](https://github.com/projectdiscovery/katana) | Next-gen web crawling framework |
@@ -88,6 +61,8 @@ node servers/unified/build/index.js
 | [`@mcp-security/waybackurls`](./servers/waybackurls) | [Waybackurls](https://github.com/tomnomnom/waybackurls) | Fetch URLs from Wayback Machine |
 | [`@mcp-security/masscan`](./servers/masscan) | [Masscan](https://github.com/robertdavidgraham/masscan) | High-speed port scanner |
 | [`@mcp-security/subfinder`](./servers/subfinder) | [Subfinder](https://github.com/projectdiscovery/subfinder) | Fast passive subdomain enumeration |
+| [`@mcp-security/uncover`](./servers/uncover) | [Uncover](https://github.com/projectdiscovery/uncover) | Search Shodan, Censys, Fofa, and more |
+| [`@mcp-security/notify`](./servers/notify) | [Notify](https://github.com/projectdiscovery/notify) | Stream results to Slack, Discord, Telegram |
 
 ### Vulnerability Assessment (11)
 
@@ -104,6 +79,14 @@ node servers/unified/build/index.js
 | [`@mcp-security/dalfox`](./servers/dalfox) | [Dalfox](https://github.com/hahwul/dalfox) | XSS vulnerability scanner |
 | [`@mcp-security/zap`](./servers/zap) | [OWASP ZAP](https://www.zaproxy.org/) | Web application security scanner |
 | [`@mcp-security/burpsuite`](./servers/burpsuite) | [Burp Suite](https://portswigger.net/burp) | Web security testing platform |
+
+### Exploitation & Password Attacks (3)
+
+| Package | Tool | Description |
+|---------|------|-------------|
+| [`@mcp-security/metasploit`](./servers/metasploit) | [Metasploit](https://www.metasploit.com/) | Penetration testing framework |
+| [`@mcp-security/hydra`](./servers/hydra) | [THC-Hydra](https://github.com/vanhauser-thc/thc-hydra) | Online password brute force tool |
+| [`@mcp-security/hashcat`](./servers/hashcat) | [Hashcat](https://hashcat.net/hashcat/) | GPU-accelerated password cracking |
 
 ### Threat Intelligence & OSINT (3)
 
@@ -122,6 +105,14 @@ node servers/unified/build/index.js
 | [`@mcp-security/trivy`](./servers/trivy) | [Trivy](https://github.com/aquasecurity/trivy) | Container and IaC vulnerability scanner |
 | [`@mcp-security/checkov`](./servers/checkov) | [Checkov](https://github.com/bridgecrewio/checkov) | Infrastructure as Code security scanner |
 
+### Kubernetes Security (3)
+
+| Package | Tool | Description |
+|---------|------|-------------|
+| [`@mcp-security/kube-hunter`](./servers/kube-hunter) | [kube-hunter](https://github.com/aquasecurity/kube-hunter) | Hunt for K8s security weaknesses |
+| [`@mcp-security/kubeaudit`](./servers/kubeaudit) | [kubeaudit](https://github.com/Shopify/kubeaudit) | Kubernetes security auditing |
+| [`@mcp-security/kube-bench`](./servers/kube-bench) | [kube-bench](https://github.com/aquasecurity/kube-bench) | CIS Kubernetes Benchmark checks |
+
 ### Code & Secret Security (2)
 
 | Package | Tool | Description |
@@ -136,7 +127,7 @@ node servers/unified/build/index.js
 | [`@mcp-security/crackmapexec`](./servers/crackmapexec) | [CrackMapExec](https://github.com/byt3bl33d3r/CrackMapExec) | Network/AD penetration testing toolkit |
 | [`@mcp-security/ghidra`](./servers/ghidra) | [Ghidra](https://ghidra-sre.org/) | NSA reverse engineering framework |
 
-### Specialized Tools (4)
+### Specialized Tools (6)
 
 | Package | Tool | Description |
 |---------|------|-------------|
@@ -144,6 +135,16 @@ node servers/unified/build/index.js
 | [`@mcp-security/sslscan`](./servers/sslscan) | [SSLScan](https://github.com/rbsec/sslscan) | SSL/TLS configuration testing |
 | [`@mcp-security/http-headers`](./servers/http-headers) | Custom | Security headers analysis |
 | [`@mcp-security/commix`](./servers/commix) | [Commix](https://github.com/commixproject/commix) | Command injection exploitation |
+| [`@mcp-security/acunetix`](./servers/acunetix) | [Acunetix](https://www.acunetix.com/) | Web vulnerability scanner |
+| [`@mcp-security/nextjs-scanner`](./servers/nextjs-scanner) | Custom | Next.js security scanner |
+
+### Meta Server (1)
+
+| Package | Description |
+|---------|-------------|
+| [`@mcp-security/unified`](./servers/unified) | Single MCP server exposing all 50 tools |
+
+---
 
 ## Installation
 
@@ -151,7 +152,7 @@ node servers/unified/build/index.js
 
 - Node.js 18+
 - The underlying security tool installed on your system
-- Any MCP-compatible AI client (Desktop app, Cursor IDE, etc.)
+- Any MCP-compatible AI client
 
 ### Quick Start
 
@@ -178,25 +179,27 @@ Add to your MCP client configuration (e.g., `mcp_config.json`):
       "command": "npx",
       "args": ["-y", "@mcp-security/nuclei", "/usr/bin/nuclei"]
     },
-    "shodan": {
+    "metasploit": {
       "command": "npx",
-      "args": ["-y", "@mcp-security/shodan", "YOUR_SHODAN_API_KEY"]
+      "args": ["-y", "@mcp-security/metasploit", "msfconsole"]
     },
-    "semgrep": {
+    "hydra": {
       "command": "npx",
-      "args": ["-y", "@mcp-security/semgrep", "semgrep"]
+      "args": ["-y", "@mcp-security/hydra", "hydra"]
     },
-    "trivy": {
+    "hashcat": {
       "command": "npx",
-      "args": ["-y", "@mcp-security/trivy", "trivy"]
+      "args": ["-y", "@mcp-security/hashcat", "hashcat"]
     },
-    "gitleaks": {
+    "kube-bench": {
       "command": "npx",
-      "args": ["-y", "@mcp-security/gitleaks", "gitleaks"]
+      "args": ["-y", "@mcp-security/kube-bench", "kube-bench"]
     }
   }
 }
 ```
+
+---
 
 ## Usage
 
@@ -224,16 +227,32 @@ Found 15,432 results for MongoDB servers...
 ```
 
 ```
-User: Scan my Terraform files for security issues
+User: Check my Kubernetes cluster for CIS benchmark compliance
 
-AI: I'll run Checkov to analyze your IaC files.
-[Uses checkov MCP server]
+AI: I'll run kube-bench to check CIS compliance.
+[Uses kube-bench MCP server]
 
-Found 12 security issues:
-- 3 Critical: S3 bucket encryption disabled
-- 5 High: Security group allows all traffic
-- 4 Medium: Missing resource tags
+CIS Benchmark Summary:
+- PASS: 45 (75%)
+- FAIL: 12
+- WARN: 8
 ```
+
+---
+
+## Security Warning
+
+> **IMPORTANT**: These tools are intended for authorized security testing only.
+
+- Always obtain proper authorization before scanning networks or systems
+- Some tools require root/administrator privileges
+- Be aware of rate limiting and scan detection
+- Follow responsible disclosure practices
+- API keys (Shodan, VirusTotal, etc.) should be kept secure
+
+See [SECURITY.md](SECURITY.md) for detailed security guidelines.
+
+---
 
 ## Development
 
@@ -241,8 +260,8 @@ Found 12 security issues:
 
 ```bash
 # Clone the repository
-git clone https://github.com/hackersatyamrastogi/Cyber_MCPs.git
-cd Cyber_MCPs
+git clone https://github.com/hackersatyamrastogi/pentesting-cyber-mcp.git
+cd pentesting-cyber-mcp
 
 # Install dependencies
 pnpm install
@@ -266,15 +285,7 @@ cd servers/my-tool
 npm init -y
 ```
 
-## Security Considerations
-
-> **IMPORTANT**: These tools are intended for authorized security testing only.
-
-- Always obtain proper authorization before scanning networks or systems
-- Some tools require root/administrator privileges
-- Be aware of rate limiting and scan detection
-- Follow responsible disclosure practices
-- API keys (Shodan, VirusTotal, etc.) should be kept secure
+---
 
 ## Contributing
 
@@ -287,9 +298,15 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guid
 - Enhance documentation and examples
 - Report bugs and suggest features
 
+---
+
 ## License
 
 This project is licensed under the MIT License - see [LICENSE](LICENSE) for details.
+
+## Author
+
+**Satyam Rastogi** - [@hackersatyamrastogi](https://github.com/hackersatyamrastogi)
 
 ## Acknowledgments
 
@@ -301,8 +318,10 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 
 <div align="center">
 
-**MCP Security Tools**
+**Cyber MCPs - Security Tools for AI**
 
-*Making security tools accessible to AI*
+*Making security tools accessible to AI assistants*
+
+[![GitHub](https://img.shields.io/badge/GitHub-hackersatyamrastogi-black?style=flat&logo=github)](https://github.com/hackersatyamrastogi)
 
 </div>
