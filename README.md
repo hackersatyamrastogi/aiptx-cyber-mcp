@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/hackersatyamrastogi-pentesting-cyber-mcp-badge.png)](https://mseep.ai/app/hackersatyamrastogi-pentesting-cyber-mcp)
+
 # Pentesting Cyber MCP
 
 <div align="center">
